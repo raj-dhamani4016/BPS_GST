@@ -1,0 +1,22 @@
+pipeline{
+    agent any
+    stages{
+        stage('clean and build phase'){
+            steps{
+            deleteDir()
+            bat "git clone https://github.com/raj-dhamani4016/BPS_GST.git"
+            bat "mvn clean -f BPS_GST"
+         }
+        }
+        stage('Test'){
+            steps {
+            bat "mvn test -f BPS_GST"
+            }
+        }
+        stage('deploy'){
+            steps {
+            bat "mvn package -f BPS_GST"
+            }
+        }
+    }
+}
