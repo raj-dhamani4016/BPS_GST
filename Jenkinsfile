@@ -3,17 +3,17 @@ pipeline{
     stages{
         stage('clean and build phase'){
             steps{
-            bat "mvn clean -f BPS_GST"
+            bat "mvn clean"
          }
         }
         stage('Test'){
             steps {
-            bat "mvn test -f BPS_GST"
+            bat "mvn test"
             }
         }
         stage('deploy'){
             steps {
-            bat "mvn package -f BPS_GST"
+            bat "mvn package"
             }
         }
     }
