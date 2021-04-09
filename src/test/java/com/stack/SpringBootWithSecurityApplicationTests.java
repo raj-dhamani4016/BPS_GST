@@ -8,6 +8,7 @@ class SpringBootWithSecurityApplicationTests {
 
 	@Test
 	void contextLoads() {
+		System.out.println("hi this demo test case");
 	}
 
 }
